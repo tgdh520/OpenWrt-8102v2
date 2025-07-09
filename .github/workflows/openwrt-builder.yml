@@ -17,7 +17,7 @@ on:
   workflow_dispatch:
 
 env:
-  REPO_URL: https://github.com/tgdh520/SourceMain
+  REPO_URL: https://github.com/ofmodemsandmen/SourceMaster
   REPO_BRANCH: main
   FEEDS_CONF: feeds.conf.default
   CONFIG_FILE: .config
