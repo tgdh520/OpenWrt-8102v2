@@ -12,6 +12,7 @@
 
 # Uncomment a feed source
 #sed -i 's/^#\(.*helloworld\)/\1/' feeds.conf.default
+#sed -i "/helloworld/d" "feeds.conf.default"
 
 #sed -i '317s/GMT0/CST-8/g' package/base-files/files/bin/config_generate
 #sed -i '318s|UTC|Asia/Shanghai|g' package/base-files/files/bin/config_generate
