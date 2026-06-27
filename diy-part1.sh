@@ -25,4 +25,5 @@ sed -i '112s|OpenWrt|ZBT8102|g' package/network/config/wifi-scripts/files/lib/wi
 #echo 'src-git helloworld https://github.com/fw876/helloworld' >>feeds.conf.default
 #echo 'src-git passwall https://github.com/xiaorouji/openwrt-passwall' >>feeds.conf.default
 #sed -i '$a src-git smpackage https://github.com/kenzok8/small-package' feeds.conf.default
+echo 'src-git liuran001_packages https://github.com/liuran001/openwrt-packages' >> feeds.conf.default
 echo 'src-git qmodem https://github.com/FUjr/QModem.git;main' >> feeds.conf.default
