@@ -19,3 +19,8 @@ echo "src-git helloworld https://github.com/fw876/helloworld.git" >> "feeds.conf
 #sed -i '$a src-git smpackage https://github.com/kenzok8/small-package' feeds.conf.default
 #echo 'src-git liuran001_packages https://github.com/liuran001/openwrt-packages' >> feeds.conf.default
 echo 'src-git qmodem https://github.com/FUjr/QModem.git;main' >> feeds.conf.default
+
+sed -i '44s|EXTRA_CFLAGS|ccflags-y|g' feeds/qmodem/driver/fibocom_QMI_WWAN/Makefile
+sed -i '39s|EXTRA_CFLAGS|ccflags-y|g' feeds/qmodem/driver/quectel_MHI/Makefile
+sed -i '43s|EXTRA_CFLAGS|ccflags-y|g' feeds/qmodem/driver/quectel_QMI_WWAN/Makefile
+sed -i '43s|EXTRA_CFLAGS|ccflags-y|g' feeds/qmodem/driver/simcom_QMI_WWAN/Makefile
