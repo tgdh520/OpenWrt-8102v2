@@ -15,9 +15,9 @@
 #sed -i '166s|192.168.1.1|10.0.0.1|g' package/base-files/files/bin/config_generate
 #sed -i '167s|192.168|10.0|g' package/base-files/files/bin/config_generate
 #默认开启Wifi
-sed -i '115s|0 : 1|1 : 0|g' package/network/config/wifi-scripts/files/lib/wifi/mac80211.uc
+sed -i '101s|0 : 1|1 : 0|g' package/network/config/wifi-scripts/files/lib/wifi/mac80211.uc
 #修改默认Wifi名称
-sed -i '112s|OpenWrt|ZBT8102|g' package/network/config/wifi-scripts/files/lib/wifi/mac80211.uc
+sed -i '107s|OpenWrt|ZBT8102|g' package/network/config/wifi-scripts/files/lib/wifi/mac80211.uc
 #修改Qmodem文件
 #sed -i '44s|EXTRA_CFLAGS|ccflags-y|g' feeds/qmodem/driver/fibocom_QMI_WWAN/Makefile
 #sed -i '39s|EXTRA_CFLAGS|ccflags-y|g' feeds/qmodem/driver/quectel_MHI/Makefile
