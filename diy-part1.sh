@@ -25,3 +25,4 @@ echo "src-git OpenClash https://github.com/vernesong/OpenClash.git" >> "feeds.co
 #sed -i '$a src-git smpackage https://github.com/kenzok8/small-package' feeds.conf.default
 #echo 'src-git liuran001_packages https://github.com/liuran001/openwrt-packages' >> feeds.conf.default
 echo 'src-git qmodem https://github.com/FUjr/QModem.git;main' >> feeds.conf.default
+git clone https://github.com/jerrykuku/luci-theme-argon.git
