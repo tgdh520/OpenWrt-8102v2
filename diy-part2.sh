@@ -10,8 +10,8 @@
 # See /LICENSE for more information.
 #
 
-#sed -i '317s/GMT0/CST-8/g' package/base-files/files/bin/config_generate
-#sed -i '318s|UTC|Asia/Shanghai|g' package/base-files/files/bin/config_generate
+sed -i '317s/GMT0/CST-8/g' package/base-files/files/bin/config_generate
+sed -i '318s|UTC|Asia/Shanghai|g' package/base-files/files/bin/config_generate
 sed -i '166s|192.168.1.1|10.0.0.1|g' package/base-files/files/bin/config_generate
 sed -i '167s|192.168|10.0|g' package/base-files/files/bin/config_generate
 #默认开启Wifi
