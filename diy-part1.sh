@@ -16,7 +16,7 @@
 echo "src-git helloworld https://github.com/fw876/helloworld.git" >> "feeds.conf.default"
 
 #sed -i "/passwall2/d" "feeds.conf.default"
-echo "src-git passwall2 https://github.com/Openwrt-Passwall/openwrt-passwall2.git" >> "feeds.conf.default"
+#echo "src-git passwall2 https://github.com/Openwrt-Passwall/openwrt-passwall2.git" >> "feeds.conf.default"
 
 #sed -i "/OpenClash/d" "feeds.conf.default"
 #echo "src-git OpenClash https://github.com/vernesong/OpenClash.git" >> "feeds.conf.default"
