@@ -18,6 +18,11 @@ sed -i '167s|192.168|10.0|g' package/base-files/files/bin/config_generate
 sed -i '115s|0 : 1|1 : 0|g' package/network/config/wifi-scripts/files/lib/wifi/mac80211.uc
 #修改默认Wifi名称
 sed -i '112s|OpenWrt|ZBT8102|g' package/network/config/wifi-scripts/files/lib/wifi/mac80211.uc
+#修改防火墙默认配置
+sed -i '3s|REJECT|ACCEPT|g' package/network/config/firewall/files/firewall.config
+sed -i '5s|REJECT|ACCEPT|g' package/network/config/firewall/files/firewall.config
+sed -i '20s|REJECT|ACCEPT|g' package/network/config/firewall/files/firewall.config
+sed -i '22s|REJECT|ACCEPT|g' package/network/config/firewall/files/firewall.config
 
 # Modify default IP
 #sed -i 's/192.168.1.1/192.168.50.5/g' package/base-files/files/bin/config_generate
