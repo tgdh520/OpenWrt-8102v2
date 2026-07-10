@@ -81,6 +81,22 @@ jobs:
         cd openwrt
         $GITHUB_WORKSPACE/$DIY_P2_SH
 
+    - name: Enable Wifi
+      run: cd openwrt && touch package/base-files/files/etc/uci-defaults/99-enable-wifi
+        echo "#!/bin/sh" > package/base-files/files/etc/uci-defaults/99-enable-wifi
+        echo >> package/base-files/files/etc/uci-defaults/99-enable-wifi
+        echo "# 遍历所有无线设备并将其设置为启用状态" >> package/base-files/files/etc/uci-defaults/99-enable-wifi
+        echo "uci -q batch <<EOF" >> package/base-files/files/etc/uci-defaults/99-enable-wifi
+        echo "  set wireless.@wifi-device[0].disabled='0'" >> package/base-files/files/etc/uci-defaults/99-enable-wifi
+        echo "  set wireless.@wifi-device[1].disabled='0'" >> package/base-files/files/etc/uci-defaults/99-enable-wifi
+        echo "  set wireless.@wifi-iface[0].disabled='0'" >> package/base-files/files/etc/uci-defaults/99-enable-wifi
+        echo " set wireless.@wifi-iface[1].disabled='0'" >> package/base-files/files/etc/uci-defaults/99-enable-wifi
+        echo "  commit wireless" >> package/base-files/files/etc/uci-defaults/99-enable-wifi
+        echo "EOF" >> package/base-files/files/etc/uci-defaults/99-enable-wifi
+        echo >> package/base-files/files/etc/uci-defaults/99-enable-wifi
+        echo "exit 0' >> package/base-files/files/etc/uci-defaults/99-enable-wifi
+
+
     - name: Download package
       id: package
       run: |
