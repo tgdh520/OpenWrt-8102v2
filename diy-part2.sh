@@ -15,7 +15,7 @@ sed -i '318s|UTC|Asia/Shanghai|g' package/base-files/files/bin/config_generate
 sed -i '166s|192.168.1.1|10.0.0.1|g' package/base-files/files/bin/config_generate
 sed -i '167s|192.168|10.0|g' package/base-files/files/bin/config_generate
 #默认开启Wifi
-sed -i '115s|disabled='0'|enabled='1'|g' package/network/config/wifi-scripts/files/lib/wifi/mac80211.uc
+#sed -i '115s|disabled='0'|enabled='1'|g' package/network/config/wifi-scripts/files/lib/wifi/mac80211.uc
 #修改默认Wifi名称
 sed -i '112s|ImmortalWrt|ZBT8102|g' package/network/config/wifi-scripts/files/lib/wifi/mac80211.uc
 #修改防火墙默认配置
