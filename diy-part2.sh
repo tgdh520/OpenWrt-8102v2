@@ -26,6 +26,7 @@ sed -i '7s|1|0|g' package/network/config/firewall/files/firewall.config
 sed -i '22s|REJECT|ACCEPT|g' package/network/config/firewall/files/firewall.config
 sed -i '24s|REJECT|ACCEPT|g' package/network/config/firewall/files/firewall.config
 
+mkdir -p package/base-files/files/etc/uci-defaults/
 touch package/base-files/files/etc/uci-defaults/99-enable-wifi
 echo '#!/bin/sh' > package/base-files/files/etc/uci-defaults/99-enable-wifi
 echo >> package/base-files/files/etc/uci-defaults/99-enable-wifi
