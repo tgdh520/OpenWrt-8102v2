@@ -26,11 +26,17 @@ sed -i '7s|1|0|g' package/network/config/firewall/files/firewall.config
 sed -i '22s|REJECT|ACCEPT|g' package/network/config/firewall/files/firewall.config
 sed -i '24s|REJECT|ACCEPT|g' package/network/config/firewall/files/firewall.config
 
-# Modify default IP
-#sed -i 's/192.168.1.1/192.168.50.5/g' package/base-files/files/bin/config_generate
-
-# Modify default theme
-#sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/Makefile
-
-# Modify hostname
-#sed -i 's/OpenWrt/P3TERX-Router/g' package/base-files/files/bin/config_generate
+touch package/base-files/files/etc/uci-defaults/99-enable-wifi
+echo '#!/bin/sh' > package/base-files/files/etc/uci-defaults/99-enable-wifi
+echo >> package/base-files/files/etc/uci-defaults/99-enable-wifi
+echo "# 遍历所有无线设备并将其设置为启用状态" >> package/base-files/files/etc/uci-defaults/99-enable-wifi
+echo "uci -q batch <<EOF" >> package/base-files/files/etc/uci-defaults/99-enable-wifi
+echo "  set wireless.@wifi-device[0].disabled='0'" >> package/base-files/files/etc/uci-defaults/99-enable-wifi
+echo "  set wireless.@wifi-device[1].disabled='0'" >> package/base-files/files/etc/uci-defaults/99-enable-wifi
+echo "  set wireless.@wifi-iface[0].disabled='0'" >> package/base-files/files/etc/uci-defaults/99-enable-wifi
+echo "  set wireless.@wifi-iface[1].disabled='0'" >> package/base-files/files/etc/uci-defaults/99-enable-wifi
+echo "  commit wireless" >> package/base-files/files/etc/uci-defaults/99-enable-wifi
+echo "EOF" >> package/base-files/files/etc/uci-defaults/99-enable-wifi
+echo >> package/base-files/files/etc/uci-defaults/99-enable-wifi
+echo 'exit 0' >> package/base-files/files/etc/uci-defaults/99-enable-wifi 
+chmod +x package/base-files/files/etc/uci-defaults/99-enable-wifi
